@@ -23,7 +23,7 @@
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>6.2152.ve00a_731c3ce9</version>
+		<version>6.2236.v12dd4c483242</version>
 	</parent>
 
 	<groupId>org.jenkins-ci.plugins</groupId>
@@ -96,17 +96,16 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<root-dir>${basedir}</root-dir>
-		<hpi.bundledArtifacts>utils-logging</hpi.bundledArtifacts>
+		<hpi.bundledArtifacts></hpi.bundledArtifacts>
 		<no-test-jar>false</no-test-jar>
 		<!-- VERSIONS -->
 		<revision>1.0</revision>
 		<changelist>0</changelist>
 		<!-- ARTIFACT VERSIONS - BOMs -->
-		<jenkins-tools-bom-version>2.555.x</jenkins-tools-bom-version>
-		<jenkins-tools-bom-patch>6269.v7a_159d68a_366</jenkins-tools-bom-patch>
+		<jenkins-tools-bom-version>2.580.x</jenkins-tools-bom-version>
+		<jenkins-tools-bom-patch>7169.vb_32a_cfd93fa_6</jenkins-tools-bom-patch>
 		<!-- ARTIFACT VERSIONS -->
-		<jenkins.version>2.541.1</jenkins.version>
-		<bouncycastle-pgp-version>1.83</bouncycastle-pgp-version>
+		<jenkins.version>2.568.3</jenkins.version>
 		<!-- ARTIFACT VERSIONS - COMPILER -->
 		<openjdk-min-version>${maven.compiler.release}</openjdk-min-version>
 		<plugin-revelc-formatter-version>2.23.0</plugin-revelc-formatter-version>
@@ -135,39 +134,13 @@
 		<dependency>
 			<groupId>org.jenkins-ci.plugins</groupId>
 			<artifactId>credentials</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.jenkins-ci.plugins</groupId>
-					<artifactId>bouncycastle-api</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.jenkins-ci.plugins</groupId>
 			<artifactId>bouncycastle-api</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.bouncycastle</groupId>
-					<artifactId>bcpg-jdk18on</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<!-- non packaged dependencies -->
-		<dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcpg-jdk18on</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.bouncycastle</groupId>
-					<artifactId>bcprov-jdk18on</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.bouncycastle</groupId>
-					<artifactId>bcutil-jdk18on</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 
 		<!-- COMPILER -->
 		<!-- TEST -->
@@ -225,13 +198,6 @@
 				<version>${jenkins-tools-bom-patch}</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>
-
-			<!-- UTILS -->
-			<dependency>
-				<groupId>org.bouncycastle</groupId>
-				<artifactId>bcpg-jdk18on</artifactId>
-				<version>${bouncycastle-pgp-version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
